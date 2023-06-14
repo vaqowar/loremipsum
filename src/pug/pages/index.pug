@@ -1,0 +1,112 @@
+extends ../includes/html
+
+block variables 
+
+block content   
+
+  header.header 
+    .container 
+      .header__inner
+        a(href="/", target="_blank", rel="nofollow").header__logo LoremIpsum.#[span.text_blue Net]
+        input.header__toggle(type="checkbox", id="header__toggle", hidden)
+        label.header__burger(for="header__toggle") #[span burger]
+        nav.header__menu
+          mixin header__link(name, link)
+            li.header__list-item
+              if link
+                a.header__link(href=link, rel="nofollow" )&attributes(attributes)=name
+              else 
+                a.header__link(href="", rel="nofollow")&attributes(attributes)=name
+          ul.header__list
+            +header__link("бизнес")
+            +header__link("о нас")
+            +header__link("цены")
+            +header__link("оформить заказ")(id="order")
+
+  section.intro 
+    .container
+      .intro__inner
+        h1.intro__title #[span.text_blue Lorem ipsum] dolor sit amet consectetur #[span.text_blue adipiscing] 
+        .intro__description
+          p.intro__text At vero eos et accusamus et iusto odio dignissimos ducimus!
+          ul.intro__list
+            li.intro__list-item Totam rem aperiam eaque ipsa
+            li.intro__list-item Sit voluptatem accusantium doloremque laudantium
+            li.intro__list-item Sed ut perspiciatis, unde omnis iste natus error
+        .intro__bottom  
+          button.btn.btn_primary.intro__btn заказать
+          button.btn.intro__btn подробнее
+
+  section.order  
+    .container
+      .order__inner
+        .order__description
+          h2.section__title.section__title_white.order__title Оформление #[span.text_blue Заказа]
+          p.section__subtitle.order__subtitle Перед заполнением формы ознакомьтесь с нашей схемой работы!
+
+        mixin info__list-item(sprite_id, title)
+          .info__list-item
+            .info__list-item-circle
+              svg.info__list-item-icon #[use(xlink:href="img/sprites.svg#"+sprite_id+"")]
+              img.info__list-item-dots(src="img/icons/circles01.svg", alt="circles")
+            p.info__list-item-title=title
+        ul.info__list
+          +info__list-item("magnifier", "Lorem ipsum dolor sit amet")
+          +info__list-item("percent", "Сonsecteturadipiscing elit")
+          +info__list-item("plus_file", "Sed do eiusmod tempor")
+          +info__list-item("envelope", "Esse cillum dolore eu fugiat")
+          +info__list-item("banknote", "Excepteur sint occaecat cupidatat non proident")
+
+        form.form(action="")
+          .select.form__select 
+            svg.select__arrow #[use(xlink:href="img/sprites.svg#arrow")]
+            input.input.form__input(type="text", name="type", placeholder="Выберите тип системы", autocomplete="off", required)
+            mixin select__list-item(name)
+              li.select__list-item=name
+            ul.select__list
+              +select__list-item("Sed ut perspiciatis")  
+              +select__list-item("Nemo enim ipsam")
+              +select__list-item("Et harum quidem")
+              +select__list-item("Temporibus autem")
+              +select__list-item("Itaque earum rerum")
+              +select__list-item("Sed ut perspiciatis")  
+              +select__list-item("Nemo enim ipsam")
+              +select__list-item("Et harum quidem")
+              +select__list-item("Temporibus autem")
+              +select__list-item("Itaque earum rerum")
+          input.input.form__input(type="email", name="email", placeholder="Ваш e-mail", autocomplete="off", required)
+          input.input.form__input(type="text", name="name", placeholder="Ваше имя", autocomplete="off", required)
+          .form__range-box
+            p.form__range-title Sed ut perspiciatis, unde omnis iste natus
+            p.form__range-percent #[span.form__range-percent-value 75]%
+            input.range.form__range(type="range", name="pecent", min="1", max="100", value="75")
+          label.btn.form__add(type="button") 
+            svg.btn-icon #[use(xlink:href="img/sprites.svg#file")]
+            | Прикрепить файл
+            input(name="file", type="file", id="file", accept=".pdf,.doc,.docx", hidden)
+          button.btn.btn_primary.form__submit Отправить
+
+  footer.footer   
+    .container  
+      .footer__inner 
+        p.footer__copyright © 2018 «LoremIpsum.net» Все права защищены.
+        mixin footer__link(sprite_id, name, link)
+          li.footer__list-item
+            if link
+              a.footer__link(href=link, rel="nofollow")&attributes(attributes)
+                svg.footer__link-icon
+                  use(xlink:href="img/sprites.svg#"+sprite_id+"")
+                span.footer__link-text=name
+            else 
+              a.footer__link(href="", rel="nofollow")&attributes(attributes)
+                svg.footer__link-icon
+                  use(xlink:href="img/sprites.svg#"+sprite_id+"")
+                span.footer__link-text=name
+        ul.footer__list
+          +footer__link("qiwi", "Qiwi wallet")
+          +footer__link("yoomoney", "Yandex Money")
+          +footer__link("webmoney", "Web Money")
+          +footer__link("email", "info@ipsum228.com", "mailto:info@ipsum228.com")(class="footer__link_white")
+          +footer__link("vk", "Мы вконтакте", "https://vk.com/")(class="footer__link_white")
+          
+        

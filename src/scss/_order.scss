@@ -1,0 +1,32 @@
+.order {
+  scroll-margin-block-start: 75px;
+
+  padding-top: 7.5rem;
+  padding-bottom: 9.375rem;
+
+  background-image: url(../img/bg/order01.jpg);
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media screen and (min-width: 1025px) {
+      row-gap: 5rem;
+    }
+    @media screen and (max-width: 1024px) {
+      row-gap: 3.75rem;
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    row-gap: 1.875rem;
+  }
+}

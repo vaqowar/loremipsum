@@ -1,0 +1,122 @@
+.intro {
+  position: relative;
+
+  background-image: url(../img/bg/intro01.jpg);
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media screen and (max-width: 1024px) {
+    background-position: top right 10%;
+
+    &::before {
+      position: absolute;
+  
+      top: 0;
+      left: 0;
+  
+      width: 100%;
+      height: 100%;
+  
+      background-color: var(--white);
+  
+      opacity: 0.6;
+  
+      content: '';
+    }
+  }
+
+  margin-top: 6.25rem;
+
+  padding-top: 6.375rem;
+
+  @media screen and (min-width: 1025px) {
+    padding-bottom: 12.75rem;  
+  }
+  @media screen and (max-width: 1024px) {
+    padding-bottom: 6.375rem;  
+  }
+ 
+  &__inner {
+    width: 100%;
+    max-width: 780px;
+
+    display: flex;
+    flex-direction: column;
+
+    text-align: left;
+
+    @media screen and (min-width: 1025px) {
+      row-gap: 5rem;
+    }
+    @media screen and (max-width: 1024px) {
+      row-gap: 3.75rem;
+    }
+  }
+  &__title {
+    color: #000;
+    font-weight: 700;
+    font-size: 3rem;
+    text-align: inherit;
+    text-transform: uppercase;
+  }
+  &__text {
+    color: var(--black);
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-align: inherit;
+  }
+  &__description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    row-gap: 0.75rem;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    row-gap: 6px;
+
+    color: #000;
+    font-weight: 400;
+    font-size: 1.25rem;
+    text-align: inherit;
+
+    list-style-type: "-";
+
+    &-item {
+      margin-left: 10px;
+
+      padding-left: 10px;
+    }
+  }
+  &__bottom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    @media screen and (min-width: 481px) {
+      gap: 1.875rem;
+    }
+    @media screen and (max-width: 481px) {
+      justify-content: space-between;
+    }
+  }
+  &__btn {
+    padding: 12px 30px;
+
+    min-height: 42px;
+
+    font-size: 13px;
+
+    @media screen and (min-width: 480px) {
+      min-width: 182px;
+    }
+    @media screen and (max-width: 481px) {
+      min-width: calc((100% - 20px) / 2);
+    }
+  }
+}

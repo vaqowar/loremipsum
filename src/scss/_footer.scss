@@ -1,0 +1,132 @@
+.footer {
+  background-color: var(--black-light);
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    @media screen and (min-width: 1201px) {
+      justify-content: space-between;
+
+      gap: 2.5rem;
+    }
+    @media screen and (max-width: 1200px) {
+      justify-content: center;
+
+      gap: 2rem;
+    }
+    @media screen and (max-width: 1024px) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__copyright {
+    color: var(--white);
+    font-weight: 400;
+    font-size: 13px;
+    white-space: nowrap;
+
+    @media screen and (max-width: 1100px) and (min-width: 1025px) {
+      font-size: 12px;
+    }
+  }
+  &__list {
+    display: inherit;
+    align-items: inherit;
+    flex-wrap: inherit;
+    justify-content: inherit;
+
+    gap: inherit;
+
+    @media screen and (max-width: 480px) {
+      flex-direction: column;
+    }
+    
+    &-item {
+      position: relative;
+
+      @media screen and (min-width: 1200px) {
+        display: flex;
+        align-items: center;
+
+        &::before,
+        &::after {
+          position: relative;
+  
+          top: 0;
+    
+          width: 1px;
+          height: 18px;
+      
+          background-color: var(--silver); 
+        }
+        &:nth-of-type(1) {
+          &::before {
+            left: 0;
+            margin-right: 2.5rem;
+  
+            content: '';
+          }
+        }
+        &:nth-of-type(3) {
+          &::after {
+            right: 0;
+            margin-left: 2.5rem;
+  
+            content: '';
+          }
+        }
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+
+    gap: 0.75rem;
+
+    color: var(--silver);
+    font-weight: 400;
+    font-size: 13px;
+    white-space: nowrap;
+  
+    transition: var(--transition);
+
+    &:hover {
+      color: var(--white);
+    }
+
+    &_white {
+      color: var(--white);
+
+      &:hover {
+        color: var(--silver);
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      justify-content: center;
+    }
+
+    &-icon {
+      width: 20px;
+      max-width: 20px;
+      min-width: 20px;
+
+      height: 20px;
+      max-height: 20px;
+      min-height: 20px;
+
+      color: var(--blue_light);
+    }
+  }
+}
